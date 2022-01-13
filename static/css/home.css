@@ -1,0 +1,48 @@
+.info {
+  background: #337970;
+  background: -webkit-gradient(linear, left bottom, left top, from(#337970), to(#333d51));
+  background: linear-gradient(0deg, #337970 0%, #333d51 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#337970",endColorstr="#333d51",GradientType=1);
+}
+
+.background-shapes {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  background-color: #d6e4f5;
+  clip-path: polygon(0 72%, 100% 72%, 100% 100%, 0% 100%);
+}
+
+
+.info-top-circle {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  clip-path: ellipse(50% 50% at 50% 0%);
+}
+
+.info-bottom-circle {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  clip-path: ellipse(50% 50% at 50% 100%);
+}
+
+@media (min-width: 768px) {
+
+  .background-shapes {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0% 100%);
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+
+  .background-shapes {
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+  }
+
+
+}

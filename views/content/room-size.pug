@@ -1,0 +1,21 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Room Size
+
+block page-number
+    | 2.3 of 5
+
+block page-description
+    | Input the dimensions for the room used in the specific activity.
+
+block progress-bar
+    +bars(2, 2)
+
+block progress-bar-subset
+    +bars(3,4)
+
+block progress-bar-after
+    +bars(0, 2)
+

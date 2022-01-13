@@ -1,0 +1,98 @@
+[
+ {
+   "Region Name": "Bangsamoro",
+   "Population": 4404288,
+   "Cases": 19775,
+   "Code": "BARMM"
+ },
+ {
+   "Region Name": "Region 13: Caraga",
+   "Population": 2804788,
+   "Cases": 50884,
+   "Code": "R13"
+ },
+ {
+   "Region Name": "Region 12: Soccsksargen",
+   "Population": 4901486,
+   "Cases": 60241,
+   "Code": "R12"
+ },
+ {
+   "Region Name": "Region 11: Davao Region",
+   "Population": 5243536,
+   "Cases": 106904,
+   "Code": "R11"
+ },
+ {
+   "Region Name": "Region 10: Northern Mindanao",
+   "Population": 5022768,
+   "Cases": 85714,
+   "Code": "R10"
+ },
+ {
+   "Region Name": "Region 9: Zamboanga Peninsula",
+   "Population": 3875576,
+   "Cases": 53585,
+   "Code": "R9"
+ },
+ {
+   "Region Name": "Region 8: Eastern Visayas",
+   "Population": 4547150,
+   "Cases": 53351,
+   "Code": "R8"
+ },
+ {
+   "Region Name": "Region 7: Central Visayas",
+   "Population": 8081988,
+   "Cases": 154571,
+   "Code": "R7"
+ },
+ {
+   "Region Name": "Region 6: Western Visayas",
+   "Population": 7954723,
+   "Cases": 152083,
+   "Code": "R6"
+ },
+ {
+   "Region Name": "Region 5: Bicol Region",
+   "Population": 6082165,
+   "Cases": 52055,
+   "Code": "R5"
+ },
+ {
+   "Region Name": "Region 4-B: Southwestern Tagalog Region",
+   "Population": 3228558,
+   "Cases": 37845,
+   "Code": "R4B"
+ },
+ {
+   "Region Name": "Region 4-A: Calabarzon",
+   "Population": 16195042,
+   "Cases": 497657,
+   "Code": "R4A"
+ },
+ {
+   "Region Name": "Region 3: Central Luzon",
+   "Population": 12422172,
+   "Cases": 281843,
+   "Code": "R3"
+ },
+ {
+   "Region Name": "Region 2: Cagayan Valley",
+   "Population": 3685744,
+   "Cases": 138003,
+   "Code": "R2"
+ },
+ {
+   "Region Name": "Region 1: Ilocos Region",
+   "Population": 5301139,
+   "Cases": 105265,
+   "Code": "R1"
+ },
+ {
+   "Region Name": "National Capital Region",
+   "Population": 13484462,
+   "Cases": 861212,
+   "Code": " NCR"
+ }
+]

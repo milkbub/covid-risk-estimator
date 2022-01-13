@@ -1,0 +1,9 @@
+mixin bars(length, max)
+    - var index = 0
+    while index < max
+        if length > 0
+            .bg-charlotte-blue.h-1
+            - length--
+        else
+            .bg-cool-gray-400.h-1
+        - index++

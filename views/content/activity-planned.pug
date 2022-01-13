@@ -1,0 +1,30 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Activity Planned
+
+block page-number
+    | 2 of 5
+
+block page-description
+    | Choose your preferred planned activity during the pandemic.
+
+block progress-bar
+    +bars(2,5)
+
+block input
+    section.space-y-3.px-0.font-sans
+        .flex.justify-center.space-x-3
+            h1.text-charlotte-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is the planned activity? 
+    .flex.flex-col.text-center.my-3.justify-center.space-y-3.px-0(class='md:h-136 md:px-20 lg:px-0')
+        .grid.grid-cols-3.gap-x-6.gap-y-2.text-charlotte-blue.h-full(class='md:gap-x-3 md:gap-y-1')
+            for activity in data.activityPlanned
+                button.presetBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-charlotte-blue(name='preset' value='{{ preset.Code }}' class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-code=activity['Code'])
+                    span
+                        img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/activity-planned/'+ activity['Image Filename'] alt=activity['Name'])
+                    span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{activity['Name']}
+    a.flex.w-full.text-lg.bg-dirty-white.rounded-full.text-center.font-black.p-4.relative(href="/estimate/2.1" type='button')
+        span.w-full.text-center.font-charlotte-blue Create Your Own 
+        object.h-8.w-8.absolute.self-center(data='/static/icons/Create.svg' type='image/svg+xml')
+

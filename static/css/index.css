@@ -1,0 +1,31 @@
+.mobile_menu {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.nav_collapse {
+  max-height: 0;
+}
+
+.nav_show {
+  max-height: 20rem;
+}
+
+#loader-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+html {
+    zoom: 100%;
+}
+
+@media(min-width: 800px) {
+    html {
+        zoom: 75%;
+    }
+}
