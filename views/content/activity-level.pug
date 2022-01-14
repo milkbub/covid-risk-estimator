@@ -44,9 +44,9 @@ block input
                                 .space-y-3
                                     h6.font-bold.text-gray-500 How vocal are you during the activity?
                                     .btn-group.font-normal
-                                        button.adv_btn.btn.btn-sm(data-code=level['Code'] + ' OB' data-index=index) Silent
-                                        button.adv_btn.btn.btn-sm(data-code=level['Code'] + ' S' data-index=index) Speaking
-                                        button.adv_btn.btn.btn-sm(data-code=level['Code'] + ' LS' data-index=index) Loudly Speaking
+                                        button.adv_btn.btn.btn-sm(data-name=level['Name'] data-code=level['Code'] + ' OB' data-index=index) Silent
+                                        button.adv_btn.btn.btn-sm(data-name=level['Name'] data-code=level['Code'] + ' S' data-index=index) Speaking
+                                        button.adv_btn.btn.btn-sm(data-name=level['Name'] data-code=level['Code'] + ' LS' data-index=index) Loudly Speaking
 
                 .hidden.absolute.justify-between.transform.left-5.right-5(class='lg:flex -translate-y-1/2 top-1/2')
                     - var nextIndex = (index + 1) == data.activityLevels.length ? 0 : (index + 1)

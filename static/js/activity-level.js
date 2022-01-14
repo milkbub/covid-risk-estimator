@@ -1,7 +1,7 @@
 (function() {
     setupNextBackButtons();
-
     var levelButtons = $('.adv_btn');
+    var activityLevelCode = getAnswer('activity-level-code');
 
     function setActiveByElement(button) {
         levelButtons.each(function() {
@@ -13,13 +13,15 @@
 
     levelButtons.each(function() {
         $(this).click(function() {
-            deleteAnswer('activity-planned-preset');
+            deleteAnswer('activity-planned-name');
+            deleteAnswer('activity-planned-code');
+
+            storeAnswer('activity-level-name', this.dataset.name);
             storeAnswer('activity-level-code', this.dataset.code);
             setActiveByElement($(this));
         }.bind(this));
     });
 
-    var activityLevelCode = getAnswer('activity-level-code');
     if (activityLevelCode) {
         levelButtons.each(function() {
             let currentButton = $(this);

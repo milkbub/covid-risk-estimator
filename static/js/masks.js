@@ -1,23 +1,52 @@
+(function() {
+    setupNextBackButtons();
 
-$(document).ready(function() {
+    var maskSlider = $('#maskSlider');
+    var maskSliderValue = $('#sliderValue');
+    var maskButtons = $('.maskBtn');
+    var maskCodeAnswer = getAnswer('mask-code');
+    var maskPercentageAnswer = getAnswer('mask-percentage');
 
-    var form = $('#MasksForm')
-    var formSubmitBtn = $('#submit_btn')
+    function checkIfDone() {
+        if (getAnswer('mask-code') && getAnswer('mask-percentage')) return true;
+    }
 
-    $(document).on('input', '#maskSlider', function() {
-        $('#sliderValue').html( $(this).val() +"%" );
+    function setActiveByCode(code) {
+        maskButtons.each(function() {
+            if (this.dataset.code == code) {
+                $(this).removeClass('bg-dirty-white').addClass('bg-beige');
+            } else {
+                $(this).addClass('bg-dirty-white').removeClass('bg-beige');
+            }
+        });
+    }
+
+    maskSlider.on('input', function() {
+        let percentage = $(this).val() + '%';
+        maskSliderValue.text(percentage);
+        storeAnswer('mask-percentage', percentage);
+        if (checkIfDone()) allowNextButton();
     });
 
-    $(".maskBtn").click(function() {
-        var mask_val = $(this).val();
-        $("#id_maskType").val(mask_val);
-        toggleNextButton($("#submit_btn"))
+    maskButtons.each(function() {
+        $(this).click(function(event) {
+            var maskCode = this.dataset.code;
+            storeAnswer('mask-name', this.dataset.name);
+            storeAnswer('mask-code', maskCode);
+            setActiveByCode(maskCode);
+            if (checkIfDone()) allowNextButton();
+        }.bind(this));
     });
 
-    formSubmitBtn .click(function() {
-        $('#id_maskPercent').val($('#maskSlider').val())
+    if (maskPercentageAnswer) {
+        maskSlider.val(parseInt(maskPercentageAnswer.replace('%', '')));
+        maskSliderValue.text(maskPercentageAnswer);
+    } else {
+        maskSlider.val(50);
+        maskSliderValue.text('50%');
+        storeAnswer('mask-percentage', '50%');
+    }
 
-        form.submit()
-
-    });
-});
+    if (maskCodeAnswer) setActiveByCode(maskCodeAnswer);
+    if (checkIfDone()) allowNextButton();
+})();

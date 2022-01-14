@@ -19,3 +19,27 @@ block progress-bar-subset
 block progress-bar-after
     +bars(0, 2)
 
+block input
+    .flex.flex-col.text-center.space-y-5.py-7
+        .flex.justify-center.space-x-3
+            h1.text-charlotte-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  How large is the room? 
+            .dropdown.dropdown-end
+                .btn.btn-circle.btn-ghost.btn-sm.text-info(tabindex='0')
+                    i.fas.fa-info-circle.text-charlotte-blue
+                .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
+                    .card-body
+                        p This part of the estimator requires the user to estimate or to input the following: room height, length and width.
+        .grid.grid-cols-3.gap-4(class='md:px-28')
+            .row-span-2.text-center.self-center
+                input#room_height.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-charlotte-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Height')
+                span.text-base(class='md:text-xl')  meters 
+            img.row-span-2.col-span-2(src='/static/images/room-size/room_size.png')
+            .col-span-1  
+            .col-span-1
+                input#room_length.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-charlotte-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Length')
+                span.text-base(class='md:text-xl')  meters 
+            .col-span-1
+                input#room_width.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-charlotte-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Width')
+                span.text-base(class='md:text-xl')  meters 
+
+

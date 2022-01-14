@@ -1,5 +1,6 @@
 var rootContent = $('#root-content-loader'); 
 var isLoading = false; // this is used to prevent too many function calls when a link is clicked several times
+var dataStore = {};
 
 function loadJavascriptFile(path) {
     $.getScript(path);
@@ -41,9 +42,15 @@ function goTo(path) {
 //
 function bindSeamlessLinks() {
     $('a').each(function() {
-        $(this).click(function(event) {
+        // jquery click function does not honor
+        // the disabled attribute
+        // also the off method is to prevent this seamless link function from being applied all the time
+        $(this).off('click').on('click', (function(event) {
             event.preventDefault(); 
             var path = this.attributes.href.value;
+
+            // this is a way to do honor the disabled attribute
+            if ( this.hasAttribute('disabled') ) return;
 
             if (path[0] == '/') {
                 if (!isLoading) goTo(path);
@@ -52,7 +59,7 @@ function bindSeamlessLinks() {
             } else {
                 window.open(path, '_blank').focus();
             }
-        }.bind(this));
+        }.bind(this) ));
     });
 }
 
@@ -61,7 +68,7 @@ function bindSeamlessLinks() {
 function setupNextBackButtons() {
     var nextButton = $('#estimate-next');
     var previousButton = $('#estimate-previous');
-    var indexLinks = ['1', '2', '3', '4', '5'];
+    var indexLinks = ['1', '2', '3', '4', '5', 'results'];
 
     var pathname = document.location.pathname.substring(1);
     var numberInURL = pathname.split('/')[1];
@@ -79,13 +86,13 @@ function setupNextBackButtons() {
     var previousPath;
 
     if (isSubsetIndex) {
-        nextPath = index < subsetIndexLinks.length ? '/estimate/' + subsetIndexLinks[index + 1] : '/estimate/3';
+        nextPath = index < subsetIndexLinks.length - 1 ? '/estimate/' + subsetIndexLinks[index + 1] : '/estimate/3';
         previousPath = index > 0 ? '/estimate/' + subsetIndexLinks[index - 1] : '/estimate/2';
     } else {
-        nextPath = index < indexLinks.length ? '/estimate/' + indexLinks[index + 1] : '/';
+        nextPath = index < indexLinks.length - 1 ? '/estimate/' + indexLinks[index + 1] : '/';
         previousPath = index > 0 ? '/estimate/' + indexLinks[index - 1] : '/';
     }
-   
+
     nextButton.attr('href', nextPath);
     previousButton.attr('href', previousPath);
 }
@@ -115,15 +122,19 @@ function hideLoader() {
 }
 
 function storeAnswer(key, value) {
-    localStorage.setItem(key, value);
+    dataStore[key] = value;
 }
 
 function getAnswer(key) {
-    return localStorage.getItem(key);
+    return dataStore[key] ? dataStore[key] : null;
 }
 
 function deleteAnswer(key) {
-    localStorage.removeItem(key);
+    delete dataStore[key];
+}
+
+function packAnswers() {
+    return dataStore;
 }
 
 window.onpopstate = function(event) {

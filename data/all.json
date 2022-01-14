@@ -214,31 +214,36 @@
          "Name":"N95 mask w/ valve",
          "InhalationMaskEfficiency":0,
          "ExhalationMaskEfficiency":0,
-         "Code":"NMEV"
+         "Code":"NMEV",
+         "Image Filename": "N95_Mask_Valve.svg"
       },
       {
          "Name":"Face shield w/o mask",
          "InhalationMaskEfficiency":0.23,
          "ExhalationMaskEfficiency":0.23,
-         "Code":"FSM"
+         "Code":"FSM",
+         "Image Filename": "Face_Shield.svg"
       },
       {
          "Name":"Cloth mask",
          "InhalationMaskEfficiency":0.3,
          "ExhalationMaskEfficiency":0.5,
-         "Code":"CM"
+         "Code":"CM",
+         "Image Filename": "Cloth_Mask.svg"
       },
       {
          "Name":"Surgical mask",
          "InhalationMaskEfficiency":0,
          "ExhalationMaskEfficiency":0.65,
-         "Code":"SM"
+         "Code":"SM",
+         "Image Filename": "Surgical_Mask.svg"
       },
       {
          "Name":"N95 mask",
          "InhalationMaskEfficiency":0.9,
          "ExhalationMaskEfficiency":0.9,
-         "Code":"NM"
+         "Code":"NM",
+         "Image Filename": "N95_Mask.svg"
       }
    ],
    "ventilationRates":[

@@ -1,6 +1,7 @@
 (function() {
     setupNextBackButtons();
     var presetChoices = $('.presetBtn');
+    var currentPresetCode = getAnswer('activity-planned-code');
 
     function setActiveByCode(code) {
         presetChoices.each(function() {
@@ -16,13 +17,23 @@
     presetChoices.each(function() {
         $(this).click(function(event) {
             var presetCode = this.dataset.code;
+
+            deleteAnswer('activity-level-name');
             deleteAnswer('activity-level-code');
-            storeAnswer('activity-planned-preset', presetCode);
+
+            deleteAnswer('room-ventilation-name');
+            deleteAnswer('room-ventilation-code');
+
+            deleteAnswer('room-width');
+            deleteAnswer('room-height');
+            deleteAnswer('room-length');
+
+            storeAnswer('activity-planned-name', this.dataset.name);
+            storeAnswer('activity-planned-code', presetCode);
             setActiveByCode(presetCode);
         }.bind(this));
     });
 
-    var currentPresetCode = getAnswer('activity-planned-preset');
     if (currentPresetCode) {
         setActiveByCode(currentPresetCode);
         allowNextButton();

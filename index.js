@@ -22,7 +22,8 @@ let estimatesTitle = {
     '2.3': 'Step 2.3: Room Size',
     '3': 'Step 3: Time and People',
     '4': 'Step 4: Masks',
-    '5': 'Step 5: Summary'
+    '5': 'Step 5: Summary',
+    'results': 'Your Results'
 }
 
 let estimatesPage = {
@@ -33,7 +34,8 @@ let estimatesPage = {
     '2.3': 'room-size',
     '3': 'time-and-people',
     '4': 'masks',
-    '5': 'summary'
+    '5': 'summary',
+    'results': 'activity-location'
 }
 
 // to get static files use route: /static/<path here>
@@ -61,8 +63,8 @@ app.get('/get-ajax-values', function(request, response) {
         // this gets the corresponding title and names of the url if it exists
         let title = lastItemInPath in titles ? titles[lastItemInPath] : null;
         let searchFor = lastItemInPath;
-
-        if (isNumeric(lastItemInPath) && lastItemInPath in estimatesPage) {
+        
+        if (lastItemInPath in estimatesPage) {
             title = estimatesTitle[lastItemInPath];
             searchFor = estimatesPage[lastItemInPath];
         }
@@ -121,6 +123,3 @@ app.listen(process.env.PORT || 8000, function() {
     console.log('Running');
 });
 
-function isNumeric(x) {
-    return x.match(/^-?\d+$/) || x.match(/^\d+\.\d+$/);
-}

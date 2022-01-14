@@ -40,7 +40,7 @@ block input
             .grid.grid-cols-3.gap-x-6.gap-y-2.text-charlotte-blue.h-full(class='md:gap-x-3 md:gap-y-1')
                 for ventilation in data.ventilationRates
                     if ventilation['Use In Custom']
-                        button.presetBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-charlotte-blue(name='preset' class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-code=ventilation['Code'])
+                        button.presetBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-charlotte-blue(name='preset' class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-name=ventilation['Name'] data-code=ventilation['Code'])
                             span
                                 img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/room-ventilation/'+ventilation['Name']+'.svg' alt=ventilation['Name'])
                             span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{ventilation['Name']}
