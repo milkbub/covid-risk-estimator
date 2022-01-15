@@ -22,7 +22,7 @@ function loadAjax(path, callback) {
                 hideLoader();
             }, 300);
         }
-        callback()
+        callback();
     });
 }
 
@@ -68,7 +68,7 @@ function bindSeamlessLinks() {
 function setupNextBackButtons() {
     var nextButton = $('#estimate-next');
     var previousButton = $('#estimate-previous');
-    var indexLinks = ['1', '2', '3', '4', '5', 'results'];
+    var indexLinks = ['1', '2', '3', '4', '5', 'result'];
 
     var pathname = document.location.pathname.substring(1);
     var numberInURL = pathname.split('/')[1];
@@ -135,6 +135,10 @@ function deleteAnswer(key) {
 
 function packAnswers() {
     return dataStore;
+}
+
+function clearAnswers() {
+    dataStore = {};
 }
 
 window.onpopstate = function(event) {

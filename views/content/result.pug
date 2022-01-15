@@ -1,0 +1,42 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Results
+
+block page-number
+    | 5 of 5
+
+block page-description
+    | Check the results below.
+
+block progress-bar
+    +bars(5,5)
+
+block result
+    section.code.h-auto.px-8.py-3.text-center.flex.flex-col.space-y-6.py-10.hidden(id="background" class='sm:px-20 lg:px-96 xl:py-10')
+        span.font-bold.code(class='txt' id="text-color")  Your activity has a...
+        span.mx-auto
+            img.w-56.h-56(id="image")
+        h2.font-semibold.text-xl.tracking-wider.text-white(class='md:text-3xl xl:text-4xl' id="name")
+        span.text-white(id="description")
+    section.h-auto.px-8.py-3.flex.flex-col.space-y-6(class='sm:px-20 lg:px-96 xl:py-10')
+        .flex.jusify-center.items-stretch.space-x-5
+            img.h-16(src='/static/images/results/Disclaimer.png')
+            span.text-gray-400.self-center.text-left
+                | This is only an estimation and should not replace advice from medical professionals.
+    section.px-8.py-3.flex.flex-col.text-charlotte-blue.text-center(class='sm:px-20 lg:px-96 xl:py-10')
+        h3.font-bold.text-xl  Want to test other values? 
+        span.flex.flex-col.space-y-5.justify-center.items-center
+            a.shadow-sm.rounded-full.bg-dirty-white.py-1.text-lg.font-medium.w-52(href="/estimate/5" type='button')  Go back to summary 
+            a.shadow-sm.rounded-full.bg-dirty-white.py-1.text-lg.font-medium.w-52(href="/estimate/1" type='button' id="new-risk")  Get new risk level 
+    section.px-8.py-2.flex.flex-col.text-gray-400.text-left.leading-snug.space-y-4(class='sm:px-20 lg:px-96 xl:py-10')
+        span Thank you very much for using aspire! Please support the researchers by answering a short survery to help improve the website!
+        section.flex.flex-col.text-lg.text-white.text-center.space-y-4
+            span
+                a.rounded-full.bg-charlotte-blue.py-2.w-full.text-lg.font-medium(type='button') Learn how aspire works 
+            span
+                a.rounded-full.bg-charlotte-green.py-2.w-full.text-lg.font-medium(href='https://forms.gle/mknhWeSdLcBHNc1m7' type='button')  Answer Survey 
+
+block pagination
+    |

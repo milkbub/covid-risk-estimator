@@ -94,13 +94,13 @@
          "Region Name":"National Capital Region",
          "Population":13484462,
          "Cases":861212,
-         "Code":" NCR"
+         "Code":"NCR"
       }
    ],
    "activityPlanned":[
       {
          "Name":"Going to the mall",
-         "Floor Area":498000,
+         "Floor Area": 498000,
          "Room Height":15,
          "Code":"GM",
          "Activity Level":"Light Movement",
@@ -112,7 +112,7 @@
          "Room Height":2.4,
          "Code":"VH",
          "Activity Level":"Resting",
-	 "Image Filename": "Visiting_House.svg"
+         "Image Filename": "Visiting_House.svg"
       },
       {
          "Name":"Grocery shopping",
@@ -120,7 +120,7 @@
          "Room Height":8,
          "Code":"GS",
          "Activity Level":"Light Movement",
-	 "Image Filename": "Grocery_Shopping.svg"
+         "Image Filename": "Grocery_Shopping.svg"
       },
       {
          "Name":"Working out in a gym",
@@ -128,7 +128,7 @@
          "Room Height":2.4,
          "Code":"WG",
          "Activity Level":"Heavy Movement",
- 	 "Image Filename": "Gym_Workout.svg"
+         "Image Filename": "Gym_Workout.svg"
       },
       {
          "Name":"Eating at a fast-food",
@@ -136,7 +136,7 @@
          "Room Height":6,
          "Code":"EF",
          "Activity Level":"Resting",
-	 "Image Filename": "Fast_Food_Dining.svg"
+         "Image Filename": "Fast_Food_Dining.svg"
       },
       {
          "Name":"Going to a hair salon",
@@ -144,7 +144,7 @@
          "Room Height":3.55,
          "Code":"GH",
          "Activity Level":"Resting",
-	 "Image Filename": "Hair_Salon.svg"
+         "Image Filename": "Hair_Salon.svg"
       },
       {
          "Name":"Going to a store",
@@ -152,7 +152,7 @@
          "Room Height":3.55,
          "Code":"GSM",
          "Activity Level":"Light Movement",
-	 "Image Filename": "Store_Shopping.svg"
+         "Image Filename": "Store_Shopping.svg"
       },
       {
          "Name":"Staying in a hotel",
@@ -160,7 +160,7 @@
          "Room Height":2.4,
          "Code":"SH",
          "Activity Level":"Resting",
-	 "Image Filename": "Hotel_Stay_In.svg"
+         "Image Filename": "Hotel_Stay_In.svg"
       },
       {
          "Name":"Working at an office",
@@ -168,7 +168,7 @@
          "Room Height":2.4,
          "Code":"WO",
          "Activity Level":"Mostly Standing",
-	 "Image Filename": "Office_Work.svg"
+         "Image Filename": "Office_Work.svg"
       }
    ],
    "activityLevels":[
@@ -387,7 +387,7 @@
       {
          "Name":"Very High Risk",
          "Upper value":1,
-         "Lower value":0.005,
+         "Lower value":0.05,
          "Desc":"Caution! This activity has a huge chance for everyone to be exposed to COVID-19. Please reconsider your options especially if the activity is not necessary. Perform all precautionary measures religiously if there is really a need to continue this activity.",
          "Code":"VHR"
       },
@@ -414,7 +414,7 @@
       },
       {
          "Name":"Very Low Risk",
-         "Upper value":1e-7,
+         "Upper value":1e-8,
          "Lower value":0,
          "Desc":"Great! This activity is estimated to have a very low risk as long as everyone will follow the protective measures announced by WHO and your respective local government units.",
          "Code":"VLR"

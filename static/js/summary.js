@@ -46,6 +46,7 @@
         if (currentKey == 'activity-planned-name' && !value) value = 'Custom';
         if (value) summaryContainer.append(createSummaryItem(label, value + ' ' + suffix, href));
     }
+
     bindSeamlessLinks();
     allowNextButton();
 })();

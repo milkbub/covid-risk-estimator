@@ -2,13 +2,14 @@
   "name": "risk-estimator-v2",
   "version": "1.0.0",
   "description": "Fixed risk-estimator",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node ."
   },
   "author": "AGALEPA feat. sevora",
   "license": "UNLICENSED",
   "dependencies": {
+    "body-parser": "^1.19.1",
     "express": "^4.17.2",
     "pug": "^3.0.2"
   }
