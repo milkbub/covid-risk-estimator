@@ -1,10 +1,17 @@
+// environment file support
+const dotenv = require('dotenv');
+dotenv.config();
+
 // native node modules
 const fs = require('fs');
 
 // external modules
 const express = require('express');
 const bodyParser = require('body-parser');
+const useragent = require('express-useragent');
 const pug = require('pug');
+
+const { MongoClient } = require('mongodb');
 
 const datapoints = require('./data/all.json');
 const { findByProperty, findByCondition } = require('./datapoint-utility.js');
@@ -14,6 +21,24 @@ const app = express();
 // these values are always important
 // and should be adjusted accordingly
 let port = process.env.PORT || 8000;
+let logServerComputation = (process.env.LOG_SERVER_COMPUTATION === 'true') || false;
+let atlasURL;
+
+// this sets the URL for the Atlas Database
+if (process.env.CONNECT_TO_ATLAS === 'true') {
+    atlasURL = `mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}@${process.env.ATLAS_CLUSTER_URL}/${process.env.ATLAS_DB_NAME}?retryWrites=true&w=majority`;
+}
+
+// use this to connect to atlas database obviously
+async function connectToAtlas(url) {
+    let mongoClient = new MongoClient(url);
+    try {
+        await mongoClient.connect();
+        return mongoClient;
+    } catch(error) {
+        console.error(error);
+    }
+}
 
 // for page routes, /:page
 let titles = {
@@ -34,6 +59,8 @@ let estimatesTitle = {
     'result': 'Your Results'
 }
 
+// the key refers to the page number in /estimates/:key
+// while the value refers to the pug file inside the views directory
 let estimatesPage = {
     '1': 'activity-location',
     '2': 'activity-planned',
@@ -53,6 +80,9 @@ app.use('/data', express.static('data'));
 // this is to retrieve the POST body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+// user agent middleware for device info
+app.use(useragent.express());
 
 // pug is the template engine in place
 app.set('view engine', 'pug');
@@ -190,7 +220,8 @@ function validateFields(object) {
     return true;
 }
 
-app.post('/post-result', function(request, response) {
+// this triggers server-side computation if the client sent a complete and valid body
+app.post('/post-result', async function(request, response) {
     response.setHeader('content-type', 'application/json');
     response.set('Cache-Control', 'no-store');
     let { body } = request; 
@@ -281,16 +312,48 @@ app.post('/post-result', function(request, response) {
     // uncomment for easy logging
     // console.log({areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition});      
     let probabilityInfectionValue = probabilityInfection(areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition);
+    let clampedProbabilityInfectionValue = Math.min(Math.max(probabilityInfectionValue, 0), 1); // limit probability infection value from 0 to 1
 
     // this tries to find the result according to their ranges
     let result = findByCondition('results', function(entry) {
-        if (probabilityInfectionValue >= entry['Lower value'] && probabilityInfectionValue <= entry['Upper value']) return true;
+        if (clampedProbabilityInfectionValue >= entry['Lower value'] && clampedProbabilityInfectionValue <= entry['Upper value']) return true;
         return false;
     });
 
-    // if result has not been found, it is out of range and thus is either the highest or lowest
-    if (!result) result = probabilityInfectionValue >= 1 ? datapoints['results'][0] : datapoints['results'][4];
-    response.json({ name: result['Name'], description: result['Desc'], code: result['Code'], p: probabilityInfectionValue });
+    // send these values to the client
+    response.json({ 
+                    name: result['Name'], 
+                    description: result['Desc'], 
+                    code: result['Code'], 
+                    probabilityInfectionValue,
+                    clampedProbabilityInfectionValue
+                  });
+
+    // extra code
+    let log = { userInput: null, computation: null, userAgent: null, createdAt: null }
+
+    log.userInput = body;
+    log.createdAt = new Date().toUTCString();
+    log.userAgent = request.useragent;
+
+    // x: wow this is so damn long 
+    // y: that's what she said
+    log.computation = { areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition, probabilityInfectionValue, clampedProbabilityInfectionValue };
+    if (logServerComputation) console.log(log);
+
+    if (atlasURL) {
+        let client;
+        try {
+            client = await connectToAtlas(atlasURL);
+            let collection = await client.db(process.env.ATLAS_DB_NAME).collection('results');
+            await collection.insertOne(log);
+        } catch(error) {
+            console.error(error);
+        } finally {
+            await client.close();
+        }
+    }
+
 });
 
 // handle all unhandled pages as 404

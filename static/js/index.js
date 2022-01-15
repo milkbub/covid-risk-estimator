@@ -1,33 +1,59 @@
 var rootContent = $('#root-content-loader'); 
 var isLoading = false; // this is used to prevent too many function calls when a link is clicked several times
+var hasJavascript = false;
 var dataStore = {};
 
+// function to load and execute a javascript file
+// with the loadAjax function below, one can figure out
+// that the loader only gets hidden when the JS is fully run
+// if there is JS otherwise a timeout delay works instead
 function loadJavascriptFile(path) {
-    $.getScript(path);
+    $.getScript(path).done(function() {
+        hideLoader();
+
+        setTimeout(function() {
+            rootContent.removeClass('hidden');
+            hideLoader();
+        }, 300);
+    });
 }
 
+// loadAjax made for loading a page's important values
+// such as title, html content, and javascript file directory
 function loadAjax(path, callback) {
     $.ajax({
         url: '/get-ajax-values?url=' + path,
         cache: false
     }).done(function(data) {
-        if (data.content) {
-            isLoading = false;
-            rootContent.html(data.content);
-            document.title = data.title;
-            if (data.javascript) loadJavascriptFile(data.javascript);
+        isLoading = false;
 
-            setTimeout(function() {
-                rootContent.removeClass('hidden');
-                hideLoader();
-            }, 300);
+        if (data.content) {    
+            document.title = data.title;
+            rootContent.html(data.content);
+
+            // the hasJavascript variable is used to figure out
+            // when the content is shown, it is generally as long as the 
+            // corresponding JS file has executed if there is any
+            if (data.javascript) {
+                hasJavascript = true;
+                loadJavascriptFile(data.javascript);
+            }
+ 
+            if (!hasJavascript) {
+                setTimeout(function() {
+                    rootContent.removeClass('hidden');
+                    hideLoader();
+                }, 300);
+            }
         }
+
         callback();
     });
 }
 
+// this is used to go to a specified path via ajax
+// and history API
 function goTo(path) {
-    // show loader here
     isLoading = true;
     rootContent.addClass('hidden');
     showLoader();
@@ -38,18 +64,18 @@ function goTo(path) {
     });
 }
 
-//
-//
+// seamless links refer to links
+// that do not reload the page everytime
 function bindSeamlessLinks() {
     $('a').each(function() {
         // jquery click function does not honor
         // the disabled attribute
         // also the off method is to prevent this seamless link function from being applied all the time
         $(this).off('click').on('click', (function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             var path = this.attributes.href.value;
 
-            // this is a way to do honor the disabled attribute
+            // this is a way to honor the disabled attribute
             if ( this.hasAttribute('disabled') ) return;
 
             if (path[0] == '/') {
@@ -97,6 +123,8 @@ function setupNextBackButtons() {
     previousButton.attr('href', previousPath);
 }
 
+// this is only used under /estimate/ pages
+// to make the next button interactive
 function allowNextButton() {
     var nextButton = $('#estimate-next');
     nextButton.removeAttr("disabled");
@@ -105,6 +133,9 @@ function allowNextButton() {
     nextButton.switchClass("cursor-not-allowed", "cursor-pointer");
 }
 
+// this is self-explanatory and so is the other piece below it
+// but is mainly used as a hack for the carousel to let it slide
+// to the chosen value
 function disablePageInteractivity() {
     rootContent.css('pointer-events', 'none');
 }
@@ -113,6 +144,7 @@ function enablePageInteractivity() {
     rootContent.removeAttr('style');
 }
 
+// self-explanatory again
 function showLoader() {
     $('#loader-wrapper').removeClass('hidden');
 }
@@ -121,14 +153,20 @@ function hideLoader() {
     $('#loader-wrapper').addClass('hidden');
 }
 
+// this is how we store our answers
+// this is written as a function to easily
+// change how it works without having to change
+// the code in every page
 function storeAnswer(key, value) {
     dataStore[key] = value;
 }
 
+// this is how we get an answer we stored
 function getAnswer(key) {
     return dataStore[key] ? dataStore[key] : null;
 }
 
+// self-explanatory
 function deleteAnswer(key) {
     delete dataStore[key];
 }
@@ -141,6 +179,7 @@ function clearAnswers() {
     dataStore = {};
 }
 
+// this is triggered when the browser backed/forward button is tapped
 window.onpopstate = function(event) {
     var path = document.location.pathname;
     var hash = document.location.hash;
