@@ -25,7 +25,7 @@
         description.text(data.description);
 
     }).fail(function(error) {
-        // in case error
+        goTo('/');
 
     });
 
