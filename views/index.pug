@@ -3,6 +3,22 @@ html
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
+        // Facebook
+        meta(property="og:title" content="aspirePH")
+        meta(property="og:description" content="Estimate your activity transmission risk to become COVID-safe!")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content="http://aspireph.herokuapp.com")
+        meta(property="og:image" content="http://aspireph.herokuapp.com/static/images/banner.png")
+        meta(property="og:site_name" content="aspirePH")
+
+        // Twitter
+        meta(name="twitter:title" content="aspirePH")
+        meta(name="twitter:description" content="Estimate your activity transmission risk to become COVID-safe!")
+        meta(name="twitter:type" content="website")
+        meta(name="twitter:image" content="http://aspireph.herokuapp.com/static/images/banner.png")
+        meta(name="twitter:card" content="summary_large_image")
+        meta(name="twitter:image:alt" content="aspireLogo")
+
         link(rel="icon" href="/static/favicon.ico")
         link(rel="stylesheet" href="/static/libraries/css/tailwind.css")
         link(rel="stylesheet" href="/static/libraries/css/loader.css")
@@ -43,7 +59,6 @@ html
                     include content/home
 
         .hidden#loader-wrapper
-            .lds-heart
-                div
+            img.lds-heart(src='/static/images/loader.png')
         
         script(src="/static/js/index.js" type="text/javascript")       
