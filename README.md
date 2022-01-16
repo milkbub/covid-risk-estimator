@@ -3,7 +3,8 @@
 A COVID risk-estimator web application. ASPIRE stands for Activity Safety Planning and Infection Risk Estimator. It aims to estimate the possible risks one can have on their planned activities during the global pandemic. It is heavily based on Jimenez and Peng’s estimator and the Goldberg et al.'s MyCOVIDRisk App.
 
 ## How to Deploy
-## Env
+These are the instructions on how to deploy locally or on Heroku. For Heroku, environment variables can be set up in their settings by clicking a button with `Reveal Config Vars` as the text.
+### Env
 Create a `.env` file inside the root folder of this repository. Here is a sample `.env` file content:
 ```env
 # By default if not specified, port is 8000
