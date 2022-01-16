@@ -23,7 +23,6 @@
 
         name.text(data.name);
         description.text(data.description);
-        console.log(data);
 
     }).fail(function(error) {
         // in case error
