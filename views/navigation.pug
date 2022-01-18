@@ -1,10 +1,20 @@
+.alert.alert-warning.top-0.left-0.w-full.rounded-none
+    .flex-1
+        svg.w-6.h-6.mx-2.stroke-current(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24')
+            path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z')
+        label.text-base.text-charlotte-blue
+            | Important Note: Unfortunately, the website is not working for any IOS devices.
+            | The researchers are currently looking for a way to solve the problem.
+            | Thank you and we hope for your kind understanding.
+
 header(class="px-8 sm:px-20 lg:px-72 font-sans text-charlotte-blue bg-transparent")
+
     div(class="navbar my-2 space-y-6 px-0")
          div(class="flex-1 mx-2")
              span(class="font-bold flex items-center space-x-1")
                  a(href="/"  class="tracking-tighter text-3xl font-black text-charlotte-blue flex")
                      object(class="h-8 w-8" data="/static/icons/Aspire-Logo (sm-blue).svg" type="image/svg+xml")
-                     | aspire 
+                     | aspire
 
          div(class="flex-none hidden px-2 mx-2 lg:flex")
              div(class="flex items-stretch space-x-2 capitalize")
@@ -21,18 +31,17 @@ header(class="px-8 sm:px-20 lg:px-72 font-sans text-charlotte-blue bg-transparen
                      i(class="fas fa-question inline-block w-5 mr-2")
                      | How To Use
 
-
          div(class="flex-none lg:hidden")
              div(class="dropdown dropdown-end")
-                
+
                  div(tabindex="0" class="m-1 btn btn-square btn-ghost")
                      svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current")
                        path(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16")
-                 
+
                  ul(class="menu dropdown-content py-3 shadow-lg bg-base-100 rounded-box w-52")
                      li(class="menu-title")
                          span Navigation
-                     li 
+                     li
                          a(href="/" class="capitalize")
                              i(class="fas fa-home inline-block w-5 mr-2")
                              | Home
@@ -40,12 +49,9 @@ header(class="px-8 sm:px-20 lg:px-72 font-sans text-charlotte-blue bg-transparen
                      li
                          a(href="https://forms.gle/mknhWeSdLcBHNc1m7" class="capitalize")
                              i(class="fas fa-poll-h inline-block w-5 mr-2")
-                             | Survey 
+                             | Survey
 
                      li
                          a(href="/how-to-use" class="capitalize")
                              i(class="fas fa-poll-h inline-block w-5 mr-2")
                              | How To Use
-
-
-                    

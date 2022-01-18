@@ -94,5 +94,11 @@
    "Population": 13484462,
    "Cases": 861212,
    "Code": " NCR"
- }
+},
+{
+  "Region Name": "Cordillera Administrative Region",
+  "Population": 1797660,
+  "Cases": 1034,
+  "Code": "CAR"
+}
 ]
