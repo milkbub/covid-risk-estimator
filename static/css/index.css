@@ -25,13 +25,10 @@
     padding-bottom: 1rem !important;
 }
 
-.alert {
-    border-radius: 0px 0px 3px 3px !important;
-    background-color: #fff457 !important;
-}
-
 #ios-alert svg {
     display: none;
+    border-radius: 0px 0px 3px 3px !important;
+    background-color: #fff457 !important;
 }
 
 html {
