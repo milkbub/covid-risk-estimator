@@ -13,7 +13,7 @@ const pug = require('pug');
 
 const { MongoClient } = require('mongodb');
 
-const datapoints = require('./data/all.json');
+const datapoints = require('./data/all.js');
 const { findByProperty, findByCondition } = require('./datapoint-utility.js');
 const { probabilityInfection } = require('./estimator-math.js');
 const app = express();
@@ -75,7 +75,6 @@ let estimatesPage = {
 
 // to get static files use route: /static/<path here>
 app.use('/static', express.static('static'));
-app.use('/data', express.static('data'));
 
 // this is to retrieve the POST body
 app.use(bodyParser.json());

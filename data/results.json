@@ -2,7 +2,7 @@
  {
    "Name": "Very High Risk",
    "Upper value": 1,
-   "Lower value": 0.005,
+   "Lower value": 0.05,
    "Desc": "Caution! This activity has a huge chance for everyone to be exposed to COVID-19. Please reconsider your options especially if the activity is not necessary. Perform all precautionary measures religiously if there is really a need to continue this activity.",
    "Code": "VHR"
  },

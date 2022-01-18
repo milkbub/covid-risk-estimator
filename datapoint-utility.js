@@ -1,4 +1,4 @@
-const datapoints = require('./data/all.json');
+const datapoints = require('./data/all.js');
 
 /* sample usage: 
  * findByProperty("activityLocation", "Region Code", "NCR")

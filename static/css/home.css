@@ -29,6 +29,10 @@
   clip-path: ellipse(50% 50% at 50% 100%);
 }
 
+.modal-box {
+    max-height: none !important;
+}
+
 @media (min-width: 768px) {
 
   .background-shapes {

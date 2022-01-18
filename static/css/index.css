@@ -20,6 +20,11 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
+.py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
 html {
     zoom: 100%;
 }
