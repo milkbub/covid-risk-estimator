@@ -3,3 +3,4 @@ node_modules/
 templates/
 .env
 *.swp
+rendered-views/
