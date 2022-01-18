@@ -1,3 +1,4 @@
+var iosAlert = $('#ios-alert');
 var rootContent = $('#root-content-loader'); 
 var isLoading = false; // this is used to prevent too many function calls when a link is clicked several times
 var hasJavascript = false;
@@ -179,6 +180,20 @@ function clearAnswers() {
     dataStore = {};
 }
 
+// returns true or false according to whether device is ios
+function isDeviceIOS() {
+    return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
 // this is triggered when the browser backed/forward button is tapped
 window.onpopstate = function(event) {
     var path = document.location.pathname;
@@ -188,6 +203,9 @@ window.onpopstate = function(event) {
         goTo(path);
     } 
 }
+
+// ios alert that stuff doesn't work
+if (!isDeviceIOS()) iosAlert.addClass('hidden');
 
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page

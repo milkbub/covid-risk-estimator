@@ -25,6 +25,15 @@
     padding-bottom: 1rem !important;
 }
 
+.alert {
+    border-radius: 0px 0px 3px 3px !important;
+    background-color: #fff457 !important;
+}
+
+#ios-alert svg {
+    display: none;
+}
+
 html {
     zoom: 100%;
 }
@@ -32,5 +41,9 @@ html {
 @media(min-width: 800px) {
     html {
         zoom: 75%;
+    }
+
+    #ios-alert svg {
+        display: flex;
     }
 }
