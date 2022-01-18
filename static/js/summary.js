@@ -24,7 +24,7 @@
         'mask-name': ['Mask Type', '/estimate/4'],
         'mask-percentage': ['Mask Percentage', '/estimate/4']
     }
-    
+
     function createSummaryItem(label, value, href) {
         var item = summaryItem.clone().removeClass('hidden');
         item.find('.summary-key').text(label)
@@ -34,6 +34,7 @@
     }
 
     var keys = Object.keys(showFields);
+
     for (var index = 0; index < keys.length; ++index) {
         var currentKey = keys[index];
         var currentField = showFields[currentKey];
@@ -44,7 +45,9 @@
         var href = currentField[1];
 
         if (currentKey == 'activity-planned-name' && !value) value = 'Custom';
+
         if (value) summaryContainer.append(createSummaryItem(label, value + ' ' + suffix, href));
+
     }
 
     bindSeamlessLinks();
