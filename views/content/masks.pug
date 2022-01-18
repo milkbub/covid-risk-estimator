@@ -17,16 +17,16 @@ block input
     .space-y-10.flex.flex-col.justify-evenly.items-center(class='lg:py-28')
         .space-y-2.m-b.w-72(class='md:w-100')
             .flex.flex-col.text-center
-                h1.text-charlotte-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Estimate the percentage of people wearing masks: 
+                h1.text-charlotte-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Estimate the percentage of people wearing masks:
             .grid.grid-cols-3.gap-2
                 .range-slider-counter.w-full.col-span-3
-                    input#maskSlider.slider.h-2.w-full(type='range' min='1' max='100' value='50')
+                    input#maskSlider.slider.h-2.w-full(type='range' min='0' max='100' value='50')
                     .grid.grid-cols-1.gap-2
                         .bg-dirty-white.px-3.py-2.text-charlotte-blue.text-center.font-semibold.rounded-full.col-span-1
-                            span#sliderValue.w-full 50% 
+                            span#sliderValue.w-full 50%
         .space-y-2
             .flex.justify-center.space-x-3
-                h1.text-charlotte-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What type of mask? 
+                h1.text-charlotte-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What type of mask?
             .flex.flex-col.text-center.justify-center.space-y-3.px-0(class='md:px-20 lg:px-0')
                 .grid.grid-cols-3.gap-x-6.gap-y-2.text-charlotte-blue.h-full(class='md:gap-x-3 md:gap-y-1')
                     for mask in data.maskTypes
@@ -34,4 +34,3 @@ block input
                             span
                                 img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/masks/'+mask['Image Filename'] alt=mask['Name'])
                             span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{mask['Name']}
-
