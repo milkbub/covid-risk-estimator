@@ -36,11 +36,11 @@ block input
                 .flex.justify-center.p-5.w-full(class='lg:py-6 lg:px-20')
                     .card.shadow-lg
                         figure.pb-0(class='sm:max-h-80 md:h-80')
-                            img.h-full.w-full(src='/static/images/activity-level/' + level['Name'] + '.svg' alt=level['Name'])
+                            img.w-full(class='md:h-full' src='/static/images/activity-level/' + level['Name'] + '.svg' alt=level['Name'])
                         .card-body.pt-0.mt-0
                             h2.card-title.text-3xl #{level['Name']}
                             p #{level['Desc']}
-                            .card-actions.py-4.flex.flex-col.mt-0.pt-0
+                            .card-actions.py-4.mt-0.pt-0
                                 .space-y-3
                                     h6.font-bold.text-gray-500 How vocal are you during the activity?
                                     .btn-group.font-normal
