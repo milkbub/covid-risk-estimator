@@ -8,7 +8,7 @@ module.exports = {
     extend: {
 
       transitionProperty: {
-        'height':'height'
+        'height': 'height'
       },
 
       fontFamily: {

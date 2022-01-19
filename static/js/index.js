@@ -3,6 +3,7 @@ var rootContent = $('#root-content-loader');
 var isLoading = false; // this is used to prevent too many function calls when a link is clicked several times
 var hasJavascript = false;
 var dataStore = {};
+var isDeviceIOS = false;
 
 // function to load and execute a javascript file
 // with the loadAjax function below, one can figure out
@@ -181,7 +182,8 @@ function clearAnswers() {
 }
 
 // returns true or false according to whether device is ios
-function isDeviceIOS() {
+isDeviceIOS = (function(){
+    return true; // for development purposes only
     return [
         'iPad Simulator',
         'iPhone Simulator',
@@ -192,7 +194,7 @@ function isDeviceIOS() {
     ].includes(navigator.platform)
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-}
+})();
 
 // this is triggered when the browser backed/forward button is tapped
 window.onpopstate = function(event) {
@@ -205,7 +207,7 @@ window.onpopstate = function(event) {
 }
 
 // ios alert that stuff doesn't work
-if (!isDeviceIOS()) iosAlert.addClass('hidden');
+if (!isDeviceIOS) iosAlert.addClass('hidden');
 
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page
