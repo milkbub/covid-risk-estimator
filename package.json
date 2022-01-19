@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node .",
-    "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./static/libraries/css/tailwind.css --watch --minify",
+    "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./static/libraries/css/tailwind.css --minify",
     "render-views": "node render-views.js",
-    "postcss": "postcss static/libraries/css/tailwind.css --use autoprefixer -o static/libraries/css/tailwind-prefixed.css"
+    "postcss": "postcss static/libraries/css/tailwind.css --use autoprefixer -o static/libraries/css/tailwind-prefixed.css",
+    "build-tailwind": "npm run render-views;npm run tailwind; npm run postcss"
   },
   "author": "AGALEPA feat. sevora",
   "license": "UNLICENSED",

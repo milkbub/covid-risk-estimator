@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./rendered-views/**/*.{html, js}', './static/js/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  media: false,
   theme: {
 
     extend: {
@@ -24,7 +24,7 @@ module.exports = {
         'dirty-white': 'e3e7f0',
         'blue-stained-white': 'd6e4f5',
         'beige': 'd8c8ae',
-        'cool-gray': colors.coolGray,
+        'cool-gray': colors.gray,
       },
 
       borderRadius: {
