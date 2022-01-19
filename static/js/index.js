@@ -206,8 +206,5 @@ window.onpopstate = function(event) {
     } 
 }
 
-// ios alert that stuff doesn't work
-if (!isDeviceIOS) iosAlert.addClass('hidden');
-
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page
