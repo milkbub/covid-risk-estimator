@@ -36,7 +36,7 @@ block input
                                 li  4. Educational Facility 
                                 li  5. Recreational Facility 
                                 li  6. Public Assembly Space 
-        .text-center.my-3.justify-center.space-y-3.px-0(class='max-h-10 md:h-136 md:px-20 lg:px-0')
+        .text-center.my-3.justify-center.space-y-3.px-0(class='md:h-136 md:px-20 lg:px-0')
             .grid.grid-cols-3.gap-x-6.gap-y-2.text-charlotte-blue(class='sm:h-136 md:h-full md:gap-x-3 md:gap-y-1')
                 for ventilation in data.ventilationRates
                     if ventilation['Use In Custom']
@@ -44,4 +44,4 @@ block input
                             span
                                 img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/room-ventilation/'+ventilation['Name']+'.svg' alt=ventilation['Name'])
                             span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{ventilation['Name']}
-       
+           
