@@ -24,7 +24,6 @@
             regionButton.find('span').text(event.target.innerText);
             
             if (isDeviceIOS) {
-                console.log('hey');
                 dropdown.removeClass('active');
             } else {
                 document.activeElement.blur();

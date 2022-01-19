@@ -205,6 +205,7 @@ function validateFields(object) {
     if (!findByProperty('activityPlanned', 'Code', object['activity-planned-code']) ) {
         let customActivityLevelCode = object['activity-level-code'];
         let [activityLevel, activityLevelClass] = customActivityLevelCode.split(' ');
+
         if (!findByProperty('activityLevels', 'Code', activityLevel) ||
             ['OB', 'S', 'LS'].indexOf(activityLevelClass) == -1 ||
             !findByProperty('ventilationRates', 'Code', object['room-ventilation-code']) ||

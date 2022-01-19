@@ -183,7 +183,7 @@ function clearAnswers() {
 
 // returns true or false according to whether device is ios
 isDeviceIOS = (function(){
-    return true; // for development purposes only
+    // return true; // for development purposes only
     return [
         'iPad Simulator',
         'iPhone Simulator',
