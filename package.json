@@ -6,11 +6,13 @@
   "scripts": {
     "start": "node .",
     "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./static/libraries/css/tailwind.css --watch --minify",
-    "render-views": "node render-views.js"
+    "render-views": "node render-views.js",
+    "postcss": "postcss static/libraries/css/tailwind.css --use autoprefixer -o static/libraries/css/tailwind-prefixed.css"
   },
   "author": "AGALEPA feat. sevora",
   "license": "UNLICENSED",
   "dependencies": {
+    "autoprefixer": "^10.4.2",
     "body-parser": "^1.19.1",
     "daisyui": "^1.24.3",
     "dotenv": "^12.0.3",
@@ -18,6 +20,8 @@
     "express-useragent": "^1.0.15",
     "glob": "^7.2.0",
     "mongodb": "^4.3.0",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^8.0.0",
     "pug": "^3.0.2",
     "tailwindcss": "^3.0.15"
   }

@@ -42,3 +42,13 @@ There is a single JS file that should be customized and is basically on every pa
 
 ### Database
 For the database, it is MongoDB and you just have to specify on the environment variables the required values for it to work properly. The database just logs every result.
+
+## Scripts
+### Building Tailwind
+These commands must be ran in order:
+- `npm run render-views` - Generates html files inside `./rendered-views/`
+- `npm run tailwind` - Generates `tailwind.css` inside `./static/libraries/css/` (requires html files from `./rendered-views/`)
+- `npm run postcss` - Generates `tailwind-prefixed.css` inside `./static/libraries/css/` (requires `./static/libraries/css/tailwind.css`)
+
+### Running Server
+- `npm start` - Starts the server
