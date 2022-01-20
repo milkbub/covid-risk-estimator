@@ -24,7 +24,7 @@ block input
                     span
                         img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/activity-planned/'+ activity['Code'] + '.svg' alt=activity['Name'])
                     span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{activity['Name']}
-    a.flex.w-full.text-lg.bg-dirty-white.rounded-full.text-center.font-black.p-4.relative.cursor-pointer(href="/estimate/2.1" type='button')
+    a.link-btn.flex.w-full.text-lg.bg-dirty-white.rounded-full.text-center.font-black.p-4.relative.cursor-pointer(href="/estimate/2.1" type='button')
         span.w-full.text-center.font-charlotte-blue Create Your Own 
         object.h-8.w-8.absolute.self-center(data='/static/icons/Create.svg' type='image/svg+xml')
 

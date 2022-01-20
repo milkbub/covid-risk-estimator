@@ -28,8 +28,11 @@
 }
 
 /* Remove default appearance for IOS */
-a.btn {
-    -webkit-appearance: none !important;
+a.link-btn {
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    appearance: button;
+    text-decoration: none;
 }
 
 /* This is the zoom hack */
