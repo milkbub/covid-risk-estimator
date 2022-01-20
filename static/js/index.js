@@ -1,4 +1,3 @@
-var iosAlert = $('#ios-alert');
 var rootContent = $('#root-content-loader'); 
 var isLoading = false; // this is used to prevent too many function calls when a link is clicked several times
 var hasJavascript = false;

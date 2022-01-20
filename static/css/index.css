@@ -11,6 +11,7 @@
   max-height: 20rem;
 }
 
+/* Positioning the wrapper on the center of the page */
 #loader-wrapper {
     position: absolute;
     top: 50%;
@@ -20,30 +21,25 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
+/* I had to do this */
 .py-4 {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
 }
 
-#ios-alert svg {
-    display: none;
+/* Remove default appearance for IOS */
+a.btn {
+    -webkit-appearance: none !important;
 }
 
-#ios-alert {
-    border-radius: 0px 0px 3px 3px !important;
-    background-color: #fff457 !important;
-}
-
+/* This is the zoom hack */
 html {
     zoom: 100%;
 }
 
 @media(min-width: 800px) {
+    /* This is the zoom hack for larger devices */
     html {
         zoom: 75%;
-    }
-
-    #ios-alert svg {
-        display: flex;
     }
 }
