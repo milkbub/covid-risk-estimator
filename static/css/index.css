@@ -29,9 +29,9 @@
 
 /* Remove default appearance for IOS */
 a.link-btn {
-    -moz-appearance: button;
-    -webkit-appearance: button;
-    appearance: button;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     text-decoration: none;
 }
 
