@@ -10,6 +10,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const useragent = require('express-useragent');
 const pug = require('pug');
+const secure = require('express-force-https');
 
 const { MongoClient } = require('mongodb');
 
@@ -72,6 +73,9 @@ let estimatesPage = {
     '5': 'summary',
     'result': 'result'
 }
+
+// force-https regardless of url
+app.use(secure);
 
 // to get static files use route: /static/<path here>
 app.use('/static', express.static('static'));
