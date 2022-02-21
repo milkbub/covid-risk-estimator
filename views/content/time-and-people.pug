@@ -1,0 +1,38 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Time and People
+
+block page-number
+    | 3 of 5
+
+block page-description
+    | Kindly estimate how long the activity will take and how many people are involved:
+
+block progress-bar
+    +bars(3, 5)
+
+block input
+    .space-y-2.flex.flex-col.justify-evenly.items-center(class='md:space-y-10 md:py-40')
+        .space-y-2.m-b.w-72(class='md:w-100')
+            .flex.flex-col.text-center
+                h1.text-black.text-lg.font-semibold.tracking-wide(class='md:text-xl xl:text-2xl')  How long will it take? 
+            .grid.grid-cols-1.gap-2
+                .bg-dirty-white.px-3.py-2.text-charlotte-blue.rounded-full.flex.col-span-1.text-xl.py-4
+                    object.h-6.w-6(data="/static/icons/Duration.svg" type='image/svg+xml')
+                    input#time_input.bg-transparent.ml-3.w-full.text-charlotte-blue.leading-tight(class='focus:outline-none focus:shadow-outline' type='number' placeholder='Input here')
+                .text-charlotte-blue.col-span-1
+                    .grid.grid-cols-2.bg-gray-600.rounded-full.p-1
+                        button#hrsBtn.active.bg-dirty-white.rounded-full.py-4.text-charlotte-blue.cursor-pointer(value='hours' type='button')
+                            | Hours
+                        button#minBtn.inactive.bg-transparent.rounded-full.py-4.text-gray-400.cursor-pointer(value='minutes' type='button')
+                            | Minutes
+        .space-y-2.w-72(class='md:w-100')
+            .flex.flex-col.text-center
+                h1.text-black.text-lg.font-semibold.tracking-wide(class='md:text-xl xl:text-2xl') How many people are involved? 
+            .grid.grid-cols-1.gap-2
+                .bg-dirty-white.px-3.py-2.text-charlotte-blue.rounded-full.flex.col-span-1.text-xl.py-4
+                    object.h-6.w-6(data="/static/icons/People.svg" type='image/svg+xml')
+                    input#people_input.bg-transparent.ml-3.w-full.text-charlotte-blue.leading-tight(class='focus:outline-none focus:shadow-outline' type='number' placeholder='Input here')
+

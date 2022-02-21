@@ -1,0 +1,23 @@
+/*
+ * IOS pseudo-selectors are so wack I needed to add this and JS code to show stuff properly with click events.
+ */ 
+.ios.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.ios.dropdown.active > button {
+    outline: 2px solid #0000;
+    outline-offset:2px;
+}
+
+/* In case IOS fixes their stuff, we still want to disable this feature */
+.ios.dropdown.dropdown-hover:hover .dropdown-content, .ios.dropdown.dropdown-open .ios.dropdown-content, .ios.dropdown:not(.dropdown-hover):focus-within .dropdown-content, .ios.dropdown:not(.dropdown-hover):focus .dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ios.dropdown.active .dropdown-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+}

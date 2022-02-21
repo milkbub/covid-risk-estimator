@@ -1,0 +1,32 @@
+[
+ {
+   "Name": "N95 mask w/ valve",
+   "InhalationMaskEfficiency": 0,
+   "ExhalationMaskEfficiency": 0,
+   "Code": "NMEV"
+ },
+ {
+   "Name": "Face shield w/o mask",
+   "InhalationMaskEfficiency": 0.23,
+   "ExhalationMaskEfficiency": 0.23,
+   "Code": "FSM"
+ },
+ {
+   "Name": "Cloth mask",
+   "InhalationMaskEfficiency": 0.3,
+   "ExhalationMaskEfficiency": 0.5,
+   "Code": "CM"
+ },
+ {
+   "Name": "Surgical mask",
+   "InhalationMaskEfficiency": 0,
+   "ExhalationMaskEfficiency": 0.65,
+   "Code": "SM"
+ },
+ {
+   "Name": "N95 mask",
+   "InhalationMaskEfficiency": 0.9,
+   "ExhalationMaskEfficiency": 0.9,
+   "Code": "NM"
+ }
+]

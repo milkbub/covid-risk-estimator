@@ -1,0 +1,65 @@
+[
+ {
+   "Name": "Going to the mall",
+   "Floor Area": 498000,
+   "Room Height": 15,
+   "Code": "GM",
+   "Activity Level": "Light Movement"
+ },
+ {
+   "Name": "Visiting a house",
+   "Floor Area": 20,
+   "Room Height": 2.4,
+   "Code": "VH",
+   "Activity Level": "Resting"
+ },
+ {
+   "Name": "Grocery shopping",
+   "Floor Area": 4468,
+   "Room Height": 8,
+   "Code": "GS",
+   "Activity Level": "Light Movement"
+ },
+ {
+   "Name": "Working out in a gym",
+   "Floor Area": 222.97,
+   "Room Height": 2.4,
+   "Code": "WG",
+   "Activity Level": "Heavy Movement"
+ },
+ {
+   "Name": "Eating at a fast-food",
+   "Floor Area": 1150,
+   "Room Height": 6,
+   "Code": "EF",
+   "Activity Level": "Resting"
+ },
+ {
+   "Name": "Going to a hair salon",
+   "Floor Area": 150,
+   "Room Height": 3.55,
+   "Code": "GH",
+   "Activity Level": "Resting"
+ },
+ {
+   "Name": "Going to a store",
+   "Floor Area": 150,
+   "Room Height": 3.55,
+   "Code": "GSM",
+   "Activity Level": "Light Movement"
+ },
+ {
+   "Name": "Staying in a hotel",
+   "Floor Area": 20,
+   "Room Height": 2.4,
+   "Code": "SH",
+   "Activity Level": "Resting"
+ },
+ {
+   "Name": "Working at an office",
+   "Floor Area": 60,
+   "Room Height": 2.4,
+   "Code": "WO",
+   "Activity Level": "Mostly Standing"
+ }
+]

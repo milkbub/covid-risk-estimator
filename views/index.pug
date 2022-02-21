@@ -1,0 +1,73 @@
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+        // Facebook
+        meta(property="og:title" content="aspirePH")
+        meta(property="og:description" content="Estimate your activity transmission risk to become COVID-safe!")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content="http://aspireph.herokuapp.com")
+        meta(property="og:image" content="http://aspireph.herokuapp.com/static/images/banner.png")
+        meta(property="og:site_name" content="aspirePH")
+
+        // Twitter
+        meta(name="twitter:title" content="aspirePH")
+        meta(name="twitter:description" content="Estimate your activity transmission risk to become COVID-safe!")
+        meta(name="twitter:type" content="website")
+        meta(name="twitter:image" content="http://aspireph.herokuapp.com/static/images/banner.png")
+        meta(name="twitter:card" content="summary_large_image")
+        meta(name="twitter:image:alt" content="aspireLogo")
+
+        link(rel="icon" href="/static/favicon.ico")
+        link(rel="stylesheet" href="/static/libraries/css/tailwind-prefixed.css")
+        link(rel="stylesheet" href="/static/libraries/css/loader.css")
+        link(rel="stylesheet" href="/static/css/index.css")
+        link(rel="stylesheet" href="/static/css/ios.css")
+        link(rel="stylesheet" href="/static/css/cstm_components.css")
+
+        link(
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        )
+
+        // Google Stuff
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet")
+
+        link(rel="stylesheet" href="/static/css/home.css")
+        link(rel="stylesheet" href="/static/css/slider-design.css")
+        link(rel="stylesheet" href="/static/css/activity-level.css")
+        link(rel="stylesheet" href="/static/css/results.css")
+
+        script(src="/static/libraries/js/jquery.js" type="text/javascript")
+        script(src="/static/libraries/js/jquery-ui.min.js" type="text/javascript")
+        script(src="/static/libraries/js/components.js" type="text/javascript")
+        script(src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8")
+
+        title= pageTitle
+
+    body
+
+        button#to_top_btn.btn.btn-circle.z-40
+            i.fas.fa-angle-up.fa-2x
+
+        include navigation
+        div(id="root-content-loader")
+            case url
+                when 'how-to-use'
+                    include content/how-to-use
+                when 'home'
+                default
+                    include content/home
+
+        .hidden#loader-wrapper
+            img.lds-heart(src='/static/images/loader.png')
+
+        script(src="/static/js/index.js" type="text/javascript")
+        script(src="/static/js/navigation.js" type="text/javascript")
+        script(src="/static/js/cstm_components.js" type="text/javascript")

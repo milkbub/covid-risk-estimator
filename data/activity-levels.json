@@ -1,0 +1,38 @@
+[
+ {
+   "Name": "Mostly Standing",
+   "Desc": "An activity that requires you to mostly stay in an idle position. Examples: Talking while teaching a class, and waiting for a bus stop.",
+   "QuantaExhalationRate": 2.3,
+   "Code": "MS",
+   "Oral breathing": 2.3,
+   "Speaking": 11.4,
+   "Loudly speaking": 65.1
+ },
+ {
+   "Name": "Heavy Movement",
+   "Desc": "An activity that requires moderate to maximum effort to exert. Examples: running, exercising in a gym, and swimming.",
+   "QuantaExhalationRate": 13.5,
+   "Code": "HM",
+   "Oral breathing": 13.5,
+   "Speaking": 63.1,
+   "Loudly speaking": 408
+ },
+ {
+   "Name": "Light Movement",
+   "Desc": "An activity that requires little or no effort to exert. Examples: walking, strolling down the street, and grocery shopping.",
+   "QuantaExhalationRate": 5.6,
+   "Code": "LM",
+   "Oral breathing": 5.6,
+   "Speaking": 26.3,
+   "Loudly speaking": 170
+ },
+ {
+   "Name": "Resting",
+   "Desc": "An activity that requires you to stay in a relaxed position. Examples: Sitting down and sleeping.",
+   "QuantaExhalationRate": 2,
+   "Code": "R",
+   "Oral breathing": 2,
+   "Speaking": 9.4,
+   "Loudly speaking": 60.5
+ }
+]

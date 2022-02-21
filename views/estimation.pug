@@ -1,0 +1,29 @@
+// site content
+main.px-8.font-sans.text-charlotte-blue.pb-5(class='sm:px-20 lg:px-72')
+  section.space-y-3
+    .grid.grid-cols-5.gap-3
+      .col-span-4
+        h3.text-base.tracking-tight(class='md:text-lg xl:text-xl')  Estimation stage
+        h2.font-black.text-3xl.tracking-tighter(class='md:text-4xl xl:text-5xl')
+          block page-title
+      .flex.items-end.justify-end
+        h3.text-base.tracking-tight.font-black(class='sm:text-xl md:text-2xl')
+          block page-number
+      .col-span-5.grid.grid-cols-5.gap-1
+        block progress-bar
+        .h-1.grid.grid-cols-4
+            block progress-bar-subset
+        block progress-bar-after
+    p.text-base.tracking-tight(class='md:text-lg xl:text-xl')
+      block page-description
+
+  section.space-y-3.mt-5.font-sans.mb-3(class='xl:px-32')
+    block input
+  .grid.grid-cols-1.gap-3.justify-items-center(class='md:flex md:flex-row-reverse md:justify-between')
+    block pagination
+      a.link-btn.text-xl.text-gray-500.w-72.bg-gray-600.rounded-full.text-center.py-4.cursor-not-allowed(href="/" id="estimate-next" disabled)
+        | Next
+
+      a.link-btn.text-xl.text-charlotte-blue.w-72.bg-dirty-white.rounded-full.text-center.py-4(href="/" id="estimate-previous")
+        | Back
+block result

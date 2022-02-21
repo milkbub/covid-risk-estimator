@@ -1,0 +1,50 @@
+header(class="px-8 sm:px-20 lg:px-72 font-sans text-charlotte-blue bg-transparent")
+
+    div(class="navbar my-2 space-y-6 px-0")
+         div(class="flex-1 mx-2")
+             a(href="/" class=" text-3xl font-black text-charlotte-blue")
+                 div(class="flex items-center")
+                     object(class="h-8 w-8" data="/static/icons/Aspire-Logo (sm-blue).svg" type="image/svg+xml")
+                     span(class="align-middle")
+                     | aspire
+
+         div(class="flex-none hidden px-2 mx-2 lg:flex")
+             div(class="flex items-stretch space-x-2 capitalize")
+                 a(href="/" class="btn btn-ghost btn-sm text-base tracking-tight md:text-lg xl:text-xl rounded-btn capitalize")
+                     i(class="fas fa-home inline-block w-5 mr-2")
+                     | Home
+
+                 a(href="https://forms.gle/mknhWeSdLcBHNc1m7" class="btn btn-ghost btn-sm text-base tracking-tight md:text-lg xl:text-xl rounded-btn capitalize")
+                     i(class="fas fa-poll-h inline-block w-5 mr-2")
+                     | Survey
+
+
+                 a(href="/how-to-use" class="btn btn-ghost btn-sm text-base tracking-tight md:text-lg xl:text-xl rounded-btn capitalize")
+                     i(class="fas fa-question inline-block w-5 mr-2")
+                     | How To Use
+
+         // change purple background to green onclick
+         div(class="flex-none lg:hidden")
+             div(class="dropdown dropdown-end" id="mobile-nav")
+
+                 button(tabindex="0" class="m-1 btn btn-square btn-ghost")
+                     svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current")
+                       path(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16")
+
+                 ul(class="menu dropdown-content py-3 shadow-lg bg-base-100 rounded-box w-52")
+                     li(class="menu-title")
+                         span Navigation
+                     li
+                         a(href="/" class="capitalize cursor-pointer")
+                             i(class="fas fa-home inline-block w-5 mr-2")
+                             | Home
+
+                     li
+                         a(href="https://forms.gle/mknhWeSdLcBHNc1m7" class="capitalize cursor-pointer")
+                             i(class="fas fa-poll-h inline-block w-5 mr-2")
+                             | Survey
+
+                     li
+                         a(href="/how-to-use" class="capitalize cursor-pointer")
+                             i(class="fas fa-poll-h inline-block w-5 mr-2")
+                             | How To Use
