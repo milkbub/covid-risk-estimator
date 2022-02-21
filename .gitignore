@@ -4,3 +4,5 @@ templates/
 .env
 *.swp
 rendered-views/
+*.css.map
+*.scss

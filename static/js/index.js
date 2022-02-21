@@ -1,4 +1,4 @@
-var rootContent = $('#root-content-loader'); 
+var rootContent = $('#root-content-loader');
 var isLoading = false; // this is used to prevent too many function calls when a link is clicked several times
 var hasJavascript = false;
 var dataStore = {};
@@ -29,18 +29,18 @@ function loadAjax(path, callback) {
     }).done(function(data) {
         isLoading = false;
 
-        if (data.content) {    
+        if (data.content) {
             document.title = data.title;
             rootContent.html(data.content);
 
             // the hasJavascript variable is used to figure out
-            // when the content is shown, it is generally as long as the 
+            // when the content is shown, it is generally as long as the
             // corresponding JS file has executed if there is any
             if (data.javascript) {
                 hasJavascript = true;
                 loadJavascriptFile(data.javascript);
             }
- 
+
             if (!hasJavascript) {
                 setTimeout(function() {
                     rootContent.removeClass('hidden');
@@ -63,7 +63,10 @@ function goTo(path) {
     loadAjax(path, function() {
         history.pushState({}, document.title, path);
         bindSeamlessLinks();
+<<<<<<< HEAD
+=======
         language ? setLanguage(language) : setLanguage('english');
+>>>>>>> cf65e3abc6964c931ecff2cbd6c709c0f2ac9079
     });
 }
 
@@ -103,7 +106,7 @@ function setupNextBackButtons() {
     var numberInURL = pathname.split('/')[1];
 
     var index = indexLinks.indexOf(numberInURL);
-    
+
     var isSubsetIndex = false;
     var subsetIndexLinks = ['2.1', '2.2', '2.3'];
     if (index == -1) {
@@ -204,9 +207,11 @@ window.onpopstate = function(event) {
 
     if (path[0] == '/' && hash.length == 0) {
         goTo(path);
-    } 
+    }
 }
 
+<<<<<<< HEAD
+=======
 
 function setLanguage(language) {
     $('.' + language +'-text').each(function() {
@@ -214,5 +219,6 @@ function setLanguage(language) {
     });
 }
 
+>>>>>>> cf65e3abc6964c931ecff2cbd6c709c0f2ac9079
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page

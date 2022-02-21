@@ -7,6 +7,10 @@
   max-height: 0;
 }
 
+.italic {
+    font-style: italic;
+}
+
 .nav_show {
   max-height: 20rem;
 }

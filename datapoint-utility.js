@@ -1,6 +1,6 @@
 const datapoints = require('./data/all.js');
 
-/* sample usage: 
+/* sample usage:
  * findByProperty("activityLocation", "Region Code", "NCR")
  * should return
  * {
