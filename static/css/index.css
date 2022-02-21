@@ -35,6 +35,14 @@ a.link-btn {
     text-decoration: none;
 }
 
+.english-text, .filipino-text {
+  display: none;
+}
+
+.english-text.is-active, .filipino-text.is-active {
+  display: unset;
+}
+
 /* This is the zoom hack */
 html {
     zoom: 100%;
