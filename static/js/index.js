@@ -63,10 +63,7 @@ function goTo(path) {
     loadAjax(path, function() {
         history.pushState({}, document.title, path);
         bindSeamlessLinks();
-<<<<<<< HEAD
-=======
         language ? setLanguage(language) : setLanguage('english');
->>>>>>> cf65e3abc6964c931ecff2cbd6c709c0f2ac9079
     });
 }
 
@@ -210,8 +207,6 @@ window.onpopstate = function(event) {
     }
 }
 
-<<<<<<< HEAD
-=======
 
 function setLanguage(language) {
     $('.' + language +'-text').each(function() {
@@ -219,6 +214,5 @@ function setLanguage(language) {
     });
 }
 
->>>>>>> cf65e3abc6964c931ecff2cbd6c709c0f2ac9079
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page
