@@ -1,3 +1,4 @@
+@import './components/collapse.css';
 .info {
   background: #337970;
   background: -webkit-gradient(linear, left bottom, left top, from(#337970), to(#333d51));
@@ -25,7 +26,14 @@
 .info-bottom-circle {
   height: 10%;
   width: 100%;
-  background-color: white;
+  background-color: #d6e4f5;
+  clip-path: ellipse(50% 50% at 50% 100%);
+}
+
+.contact-top-circle {
+  height: 10%;
+  width: 100%;
+  background-color: #d6e4f5;
   clip-path: ellipse(50% 50% at 50% 100%);
 }
 

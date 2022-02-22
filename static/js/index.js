@@ -133,7 +133,7 @@ function allowNextButton() {
     var nextButton = $('#estimate-next');
     nextButton.removeAttr("disabled");
     nextButton.switchClass("text-gray-500", "text-white");
-    nextButton.switchClass("bg-gray-600", "bg-charlotte-green");
+    nextButton.switchClass("bg-gray-600", "bg-green");
     nextButton.switchClass("cursor-not-allowed", "cursor-pointer");
 }
 
