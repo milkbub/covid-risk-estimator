@@ -5,9 +5,9 @@
 
     function setActiveByElement(button) {
         levelButtons.each(function() {
-            $(this).removeClass('active').removeClass('bg-charlotte-gold');
+            $(this).removeClass('active').removeClass('bg-gold');
         });
-        $(button).addClass('active').addClass('bg-charlotte-gold');
+        $(button).addClass('active').addClass('bg-gold');
         allowNextButton();
     }
 

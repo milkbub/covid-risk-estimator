@@ -18,11 +18,11 @@
             if (button.attr('id') == id) { 
                 button.removeClass('inactive').addClass('active');
                 button.removeClass('bg-transparent').addClass('bg-dirty-white');
-                button.removeClass('text-gray-400').addClass('text-charlotte-blue');
+                button.removeClass('text-gray-400').addClass('text-midnight-blue');
             } else {
                 button.removeClass('active').addClass('inactive');
                 button.removeClass('bg-dirty-white').addClass('bg-transparent');
-                button.removeClass('text-charlotte-blue').addClass('text-gray-400');
+                button.removeClass('text-midnight-blue').addClass('text-gray-400');
             }
         });
         storeAnswer('time-unit', id == 'minBtn' ? 'minutes' : 'hours');

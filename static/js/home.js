@@ -16,4 +16,16 @@
   });
 
   bindToTopScroll();
+
+  $(".collapsible").on('click', function() {
+      var content = $(this).children('.collapse-content')
+      if (content.hasClass('content-hide')) {
+          content.removeClass('content-hide');
+          content.addClass('content-show');
+      } else {
+          content.removeClass('content-show');
+          content.addClass('content-hide');
+      };
+  });
+
 })();
