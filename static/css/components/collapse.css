@@ -1,0 +1,111 @@
+.collapse {
+  border: 2px solid #F0F0F0;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  width: 70rem;
+}
+
+.collapse-title,
+.collapse > input[type="checkbox"],
+.collapse-content {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.collapse > input[type="checkbox"] {
+  appearance: none;
+  opacity: 0;
+}
+
+.collapse-content {
+  max-height: 0px;
+  grid-row-start: 2;
+  overflow: hidden;
+}
+
+.collapse-arrow .collapse-title:after {
+  top: 1.4rem;
+  right: 1.4rem;
+  content: "";
+  transform-origin: 75% 75%;
+  transform: rotate(45deg);
+  box-shadow: 2px 2px;
+  pointer-events: none;
+
+  display: block;
+  position: absolute;
+  height: 0.5rem;
+  width: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+.collapse-plus .collapse-title:after {
+  top: 0.9rem;
+  right: 1.4rem;
+  content: "+";
+  pointer-events: none;
+
+  display: block;
+  position: absolute;
+  height: 0.5rem;
+  width: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.collapse:not(.collapse-open):not(.collapse-close) input[type="checkbox"],
+.collapse:not(.collapse-open):not(.collapse-close) .collapse-title {
+  cursor: pointer;
+}
+.collapse:focus:not(.collapse-open):not(.collapse-close) .collapse-title {
+  cursor: unset;
+}
+.collapse-title,
+.collapse > input[type="checkbox"] {
+  min-height: 3.75rem;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  width: 100%;
+  padding: 1rem;
+  padding-right: 3rem;
+}
+
+.collapse-open .collapse-title,
+.collapse:focus:not(.collapse-close) .collapse-title,
+.collapse:not(.collapse-close)
+  input[type="checkbox"]:checked
+  ~ .collapse-title {
+  color: #00C48A;
+}
+
+.collapse-content {
+  cursor: unset;
+  transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.collapse-open .collapse-content,
+.collapse:focus:not(.collapse-close) .collapse-content,
+.collapse:not(.collapse-close)
+  input[type="checkbox"]:checked
+  ~ .collapse-content {
+  opacity: 100%
+  padding-bottom: 1rem;
+  transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  max-height: 9000px;
+  padding-bottom: 1rem;
+}
+
+.collapse-open.collapse-arrow .collapse-title:after,
+.collapse-arrow:focus:not(.collapse-close) .collapse-title:after,
+.collapse-arrow:not(.collapse-close)
+  input[type="checkbox"]:checked
+  ~ .collapse-title:after {
+  transform: rotate(225deg);
+}
+
+.collapse-open.collapse-plus .collapse-title:after,
+.collapse-plus:focus:not(.collapse-close) .collapse-title:after,
+.collapse-plus:not(.collapse-close)
+  input[type="checkbox"]:checked
+  ~ .collapse-title:after {
+  content: "−";
+}

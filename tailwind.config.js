@@ -17,12 +17,12 @@ module.exports = {
 
 
       colors: {
-        'charlotte-green': '337970',
-        'charlotte-gold': 'b1a36a',
-        'charlotte-blue': '333d51',
+        'green': '337970',
+        'gold': 'b1a36a',
+        'midnight-blue': '333d51',
         'orange': 'd6974',
         'dirty-white': 'e3e7f0',
-        'blue-stained-white': 'd6e4f5',
+        'sky-blue': 'd6e4f5',
         'beige': 'd8c8ae',
         'cool-gray': colors.gray,
       },
@@ -82,4 +82,3 @@ module.exports = {
     require('daisyui'),
   ],
 }
-

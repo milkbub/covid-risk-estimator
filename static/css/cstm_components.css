@@ -1,19 +1,19 @@
-.cstm_round_button, .btn-charlotte-blue, .btn-charlotte-gold {
+.cstm_round_button, .btn-midnight-blue, .btn-gold {
   border-radius: 9999px;
   transition: all 0.1s ease-in-out;
 }
-.cstm_round_button:active, .btn-charlotte-blue:active, .btn-charlotte-gold:active {
+.cstm_round_button:active, .btn-midnight-blue:active, .btn-gold:active {
   filter: brightness(85%);
 }
-.cstm_round_button:hover, .btn-charlotte-blue:hover, .btn-charlotte-gold:hover {
+.cstm_round_button:hover, .btn-midnight-blue:hover, .btn-gold:hover {
   transform: scale(1.02);
 }
 
-.btn-charlotte-gold {
+.btn-gold {
   background-color: #b1a36a;
 }
 
-.btn-charlotte-blue {
+.btn-midnight-blue {
   background-color: #333d51;
 }
 
@@ -30,5 +30,3 @@
 #to_top_btn.show {
   opacity: 1;
 }
-
-/*# sourceMappingURL=cstm_components.css.map */
