@@ -1,0 +1,55 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Activity Level
+
+block page-number
+    | 2.1 of 5
+
+block page-description
+    | Click the left or right button (or slide when using mobile) to choose the intensity. The intensity increases from left to right.
+
+block progress-bar
+    +bars(2, 2)
+
+block progress-bar-subset
+    +bars(1,4)
+
+block progress-bar-after
+    +bars(0, 2)
+
+block input
+    .flex.flex-col.justify-center.space-x-3
+        .flex.justify-center.space-x-3
+            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl') How intense is the activity? 
+            .dropdown.dropdown-end
+                .btn.btn-circle.btn-ghost.btn-sm.text-info(tabindex='0')
+                    i.fas.fa-info-circle.text-midnight-blue
+
+                .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
+                    .card-body
+                        p The intensity of the activity refers to the nature of what the people will be doing for the planned activity (e.g. talking, sleeping, walking, &amp; running).
+    .w-full.carousel
+        each level, index in data.activityLevels
+            .relative.w-full.carousel-item(id='slide' + index)
+                .p-5.w-full(class='lg:py-6 lg:px-20')
+                    .card.shadow-lg
+                        figure.p-0.m-0(class='sm:max-h-80 md:h-80')
+                            img.p-0.m-0.w-full(class='md:h-full' src='/static/images/activity-level/' + level['Name'] + '.svg' alt=level['Name'])
+                        .card-body.pt-0.mt-0
+                            h2.card-title.text-3xl #{level['Name']}
+                            p #{level['Desc']}
+                            .card-actions.py-4.mt-0.pt-0
+                                .space-y-3
+                                    h6.font-bold.text-gray-500 How vocal are you during the activity?
+                                    .btn-group.font-normal
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' OB' data-index=index) Silent
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' S' data-index=index) Speaking
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' LS' data-index=index) Loudly Speaking
+
+                .hidden.absolute.justify-between.transform.left-5.right-5(class='lg:flex -translate-y-1/2 top-1/2')
+                    - var nextIndex = (index + 1) == data.activityLevels.length ? 0 : (index + 1)
+                    - var previousIndex = (index - 1) == -1 ? data.activityLevels.length-1 : (index - 1)
+                    a.btn.btn-circle(href="#slide" + previousIndex) &#x276E;
+                    a.btn.btn-circle(href="#slide" + nextIndex) &#x276F;

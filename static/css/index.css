@@ -1,0 +1,60 @@
+.mobile_menu {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.nav_collapse {
+  max-height: 0;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.nav_show {
+  max-height: 20rem;
+}
+
+/* Positioning the wrapper on the center of the page */
+#loader-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* I had to do this */
+.py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Remove default appearance for IOS */
+a.link-btn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    text-decoration: none;
+}
+
+.english-text, .filipino-text {
+  display: none;
+}
+
+.english-text.is-active, .filipino-text.is-active {
+  display: unset;
+}
+
+/* This is the zoom hack */
+html {
+    zoom: 100%;
+}
+
+@media(min-width: 800px) {
+    /* This is the zoom hack for larger devices */
+    html {
+        zoom: 75%;
+    }
+}

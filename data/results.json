@@ -1,0 +1,37 @@
+[
+ {
+   "Name": "Very High Risk",
+   "Upper value": 1,
+   "Lower value": 0.05,
+   "Desc": "Caution! This activity has a huge chance for everyone to be exposed to COVID-19. Please reconsider your options especially if the activity is not necessary. Perform all precautionary measures religiously if there is really a need to continue this activity.",
+   "Code": "VHR"
+ },
+ {
+   "Name": "High Risk",
+   "Upper value": 0.05,
+   "Lower value": 0.001,
+   "Desc": "Careful! This activity can put you and others in unsafe environments. Make sure to follow precautionary measures to lower your risks of contracting the virus.",
+   "Code": "HR"
+ },
+ {
+   "Name": "Medium Risk",
+   "Upper value": 0.001,
+   "Lower value": 0.0001,
+   "Desc": "Be Careful. It is recommended to practice all safety measures when doing this activity to keep you and the people around you safer.",
+   "Code": "MR"
+ },
+ {
+   "Name": "Low Risk",
+   "Upper value": 0.0001,
+   "Lower value": 1e-7,
+   "Desc": "Good Job! This activity is estimated to have a low risk as long as everyone is wary of the protective measures given by their respective local authorities and WHO.",
+   "Code": "LR"
+ },
+ {
+   "Name": "Very Low Risk",
+   "Upper value": 1e-7,
+   "Lower value": 0,
+   "Desc": "Great! This activity is estimated to have a very low risk as long as everyone will follow the protective measures announced by WHO and your respective local government units.",
+   "Code": "VLR"
+ }
+]

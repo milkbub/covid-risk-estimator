@@ -1,0 +1,35 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Activity Location
+
+block page-number
+    | 1 of 5
+
+block page-description
+    | Choose what region the activity will take place in.
+
+block progress-bar
+    +bars(1,5)
+
+block input
+    .flex.flex-col.text-center.space-y-7
+        .flex.justify-center.space-x-3
+            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Where will the activity be? 
+
+        .relative.h-96.flex.justify-center(class='md:h-136')
+            img.absolute.h-full.mx-auto(src="/static/images/philippines/PH_All.png")
+            img#region-image.absolute.h-full.mx-auto
+
+        .relative.text-left.flex-grow
+            .flex.justify-center.items-center
+                .dropdown.dropdown-top.dropdown-end.capitalize
+                    button#regionBtn.btn-lg.bg-gold.w-72.capitalize.text-xl.text-white.rounded-full.outline-none.flex.justify-between.items-center.px-10.cursor-pointer(tabindex='0' class='md:w-96')
+                        span Select Your Region
+                        i.fas.fa-chevron-down
+
+                    ul.p-2.shadow.menu.dropdown-content.bg-base-100.rounded-box.w-full(tabindex='0' id='region-list')
+                        for regionChoice in data.activityLocation
+                            li(class='region-choice')
+                                button.btn.btn-ghost.regions_menu_item.px-4.py-2.text-lg.capitalize.cursor-pointer(class='hover:bg-dirty-white' role='regions_menu_item' data-code=regionChoice['Code']) #{regionChoice['Region Name']}

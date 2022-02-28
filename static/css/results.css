@@ -1,0 +1,54 @@
+.VLR_bg {
+  background: #337970;
+  background: -webkit-gradient(linear, left bottom, left top, from(#337970), to(#333d51));
+  background: linear-gradient(0deg, #337970 0%, #333d51 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#337970",endColorstr="#333d51",GradientType=1);
+}
+
+.LR_bg {
+  background: #32727f;
+  background: -webkit-gradient(linear, left bottom, left top, from(#32727f), to(#333352));
+  background: linear-gradient(0deg, #32727f 0%, #333352 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#32727f",endColorstr="#333352",GradientType=1);
+}
+
+.MR_bg {
+  background: #c2a24a;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c2a24a), to(#6b4c31));
+  background: linear-gradient(0deg, #c2a24a 0%, #6b4c31 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c2a24a",endColorstr="#6b4c31",GradientType=1);
+}
+
+.HR_bg {
+  background: #c2854a;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c2854a), to(#6b3431));
+  background: linear-gradient(0deg, #c2854a 0%, #6b3431 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c2854a",endColorstr="#6b3431",GradientType=1);
+}
+
+.VHR_bg {
+  background: #bc4d42;
+  background: -webkit-gradient(linear, left bottom, left top, from(#bc4d42), to(#542222));
+  background: linear-gradient(0deg, #bc4d42 0%, #542222 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bc4d42" ,endColorstr="#542222",GradientType=1);
+}
+
+.VLR_txt {
+  color: #4cb9a6;
+}
+
+.LR_txt {
+  color: #4197a7;
+}
+
+.MR_txt {
+  color: #d4b663;
+}
+
+.HR_txt {
+  color: #dd9a58;
+}
+
+.VHR_txt {
+  color: #d67369;
+}

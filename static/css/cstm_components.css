@@ -1,0 +1,32 @@
+.cstm_round_button, .btn-midnight-blue, .btn-gold {
+  border-radius: 9999px;
+  transition: all 0.1s ease-in-out;
+}
+.cstm_round_button:active, .btn-midnight-blue:active, .btn-gold:active {
+  filter: brightness(85%);
+}
+.cstm_round_button:hover, .btn-midnight-blue:hover, .btn-gold:hover {
+  transform: scale(1.02);
+}
+
+.btn-gold {
+  background-color: #b1a36a;
+}
+
+.btn-midnight-blue {
+  background-color: #333d51;
+}
+
+#to_top_btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: 5rem;
+  width: 5rem;
+  z-index: 100;
+  transition: all 0.1s linear;
+  opacity: 0;
+}
+#to_top_btn.show {
+  opacity: 1;
+}

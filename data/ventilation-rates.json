@@ -1,0 +1,137 @@
+[
+ {
+   "Name": "Going to the mall",
+   "Activity": "Going to the mall",
+   "People Outdoor Air Rate": 3.54,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 39,
+   "Use In Custom": false,
+   "Code": "GM"
+ },
+ {
+   "Name": "Grocery shopping",
+   "Activity": "Grocery shopping",
+   "People Outdoor Air Rate": 3.54,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 8,
+   "Use In Custom": false,
+   "Code": "GS"
+ },
+ {
+   "Name": "Working out in a gym",
+   "Activity": "Working out in a gym",
+   "People Outdoor Air Rate": 10,
+   "Area Outdoor Air Rate": 0.9,
+   "Occupant Density": 7,
+   "Use In Custom": false,
+   "Code": "WG"
+ },
+ {
+   "Name": "Visiting a friend's house",
+   "Activity": "Visiting a friend's house",
+   "People Outdoor Air Rate": 3.54,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 30,
+   "Use In Custom": false,
+   "Code": "VH"
+ },
+ {
+   "Name": "Eating fast-food",
+   "Activity": "Eating fast-food",
+   "People Outdoor Air Rate": 3.54,
+   "Area Outdoor Air Rate": 0.91,
+   "Occupant Density": 97,
+   "Use In Custom": false,
+   "Code": "EF"
+ },
+ {
+   "Name": "Going to a hair salon",
+   "Activity": "Going to a hair salon",
+   "People Outdoor Air Rate": 3.54,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 25,
+   "Use In Custom": false,
+   "Code": "GH"
+ },
+ {
+   "Name": "Going to a store",
+   "Activity": "Going to a store",
+   "People Outdoor Air Rate": 3.54,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 39,
+   "Use In Custom": false,
+   "Code": "GSM"
+ },
+ {
+   "Name": "Staying in a hotel",
+   "Activity": "Staying in a hotel",
+   "People Outdoor Air Rate": 2.36,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 10,
+   "Use In Custom": false,
+   "Code": "SH"
+ },
+ {
+   "Name": "Working in an office",
+   "Activity": "Working in an office",
+   "People Outdoor Air Rate": 2.36,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 5,
+   "Use In Custom": false,
+   "Code": "WO"
+ },
+ {
+   "Name": "Residential",
+   "Activity": "---",
+   "People Outdoor Air Rate": 2.6,
+   "Area Outdoor Air Rate": 0.41,
+   "Occupant Density": 36,
+   "Use In Custom": true,
+   "Code": "C"
+ },
+ {
+   "Name": "Office Building",
+   "Activity": "---",
+   "People Outdoor Air Rate": 2.36,
+   "Area Outdoor Air Rate": 0.3,
+   "Occupant Density": 22,
+   "Use In Custom": true,
+   "Code": "O"
+ },
+ {
+   "Name": "Shopping",
+   "Activity": "---",
+   "People Outdoor Air Rate": 3.72,
+   "Area Outdoor Air Rate": 0.61,
+   "Occupant Density": 33,
+   "Use In Custom": true,
+   "Code": "M"
+ },
+ {
+   "Name": "Educational",
+   "Activity": "---",
+   "People Outdoor Air Rate": 4.38,
+   "Area Outdoor Air Rate": 0.82,
+   "Occupant Density": 51,
+   "Use In Custom": true,
+   "Code": "E"
+ },
+ {
+   "Name": "Recreational",
+   "Activity": "---",
+   "People Outdoor Air Rate": 5.19,
+   "Area Outdoor Air Rate": 0.88,
+   "Occupant Density": 49,
+   "Use In Custom": true,
+   "Code": "G"
+ },
+ {
+   "Name": "Public Assembly",
+   "Activity": "---",
+   "People Outdoor Air Rate": 2.65,
+   "Area Outdoor Air Rate": 0.38,
+   "Occupant Density": 77,
+   "Use In Custom": true,
+   "Code": "P"
+ }
+]

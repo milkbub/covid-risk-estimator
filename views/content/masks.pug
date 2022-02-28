@@ -1,0 +1,37 @@
+extends ../estimation.pug
+include ../estimation-mixins.pug
+
+block page-title
+    | Masks
+
+block page-number
+    | 4 of 5
+
+block page-description
+    | You are almost done!
+
+block progress-bar
+    +bars(4, 5)
+
+block input
+    .flex.justify-evenly
+        .space-y-10.flex-col.justify-evenly.items-center(class='lg:py-28')
+            .space-y-2.m-b(class='md:w-100')
+                .flex-col.text-center
+                    h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Estimate the percentage of people wearing masks:
+                .flex-col
+                    .range-slider-counter.w-full.col-span-3
+                        input#maskSlider.slider.h-2.w-full(type='range' min='0' max='100' value='50')
+                        .grid.grid-cols-1.gap-2
+                            .bg-dirty-white.px-3.py-2.text-midnight-blue.text-center.font-semibold.rounded-full.col-span-1
+                                span#sliderValue.w-full 50%
+            .space-y-2.flex-col.flex
+                .flex-col.justify-center.space-x-3
+                    h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What type of mask?
+                .flex-col.text-center.justify-center.space-y-3(class='lg:px-0')
+                    .grid.grid-cols-3.gap-x-6.gap-y-2.text-midnight-blue.h-full(class='md:gap-x-3 md:gap-y-1')
+                        for mask in data.maskTypes
+                            button.maskBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue.cursor-pointer(data-name=mask['Name'] data-code=mask['Code'] class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl')
+                                span
+                                    img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/masks/'+mask['Code'] + '.svg' alt=mask['Name'])
+                                span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{mask['Name']}

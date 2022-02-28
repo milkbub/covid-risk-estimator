@@ -1,0 +1,112 @@
+.flex.justify-center.items-center.px-0.space-y-2
+  .hero
+    .text-center.hero-content
+      .max-w-md
+        h1.mb-5.text-5xl.font-bold
+          | How to use ASPIRE
+          // add background
+
+// turn into carousel
+// image border
+// add mobile view for how to use
+.flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(class='md:px-72 lg:px-96')
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/homepage (screenshot 1).png")
+    .card-body
+      h2.card-title
+        | Select the “Get Started” button to begin the estimation process.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/consent (screenshot 2).png")
+    .card-body
+      h2.card-title
+        | You will first be met with a checklist before starting the estimation. Check the boxes once the conditions are met.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/progress (screenshot 3).png")
+    .card-body
+      h2.card-title
+        | Estimating your risk will be done in only 5 steps. The progress bar will indicate which step you are in.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/location (screenshot 4).png")
+    .card-body
+      h2.card-title
+        | Step 1 is the activity location. Choose from the dropdown box what region the activity will take place.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/planned activity (screenshot 5).png")
+    .card-body
+      h2.card-title
+        | Step 2 is the activity planned. Select from the choices of your planned activity during the pandemic.
+      .alert.alert-success
+        .flex-1.flex-col.space-y-5
+          button#extraDivBtn.m-1.btn  What if my planned activity is not within the available choices?
+          #extraDiv.transition-all.h-0.closed.space-y-5
+            .card.shadow.h-0.text-midnight-blue.bg-white
+              .card-body
+                h2.card-title.flex
+                  svg.w-6.h-6.mx-2(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='#2196f3')
+                    path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z')
+                  |                   Creating Your Own Activity. If you create your own activity, the website will ask you more questions until it understands your custom activity.
+            .card.card-bordered.shadow.font-sans.bg-white.h-0
+              figure.px-10.pt-10
+                img.rounded-xl(src="/static/images/screenshots/activity level (screenshot 5.1).png")
+              .card-body
+                h2.card-title.text-midnight-blue
+                  | Step 2.1 is the activity level. Drag the slider to choose the intensity of your custom activity.
+            .card.card-bordered.shadow.font-sans.bg-white.h-0
+              figure.px-10.pt-10
+                img.rounded-xl(src="/static/images/screenshots/activity level (screenshot 5.2).png")
+              .card-body
+                h2.card-title.text-midnight-blue
+                  | You can go to the advanced settings if you want more specific information to be included.
+            .card.card-bordered.shadow.font-sans.bg-white.h-0
+              figure.px-10.pt-10
+                img.rounded-xl(src="/static/images/screenshots/ventilation (screenshot 6).png")
+              .card-body
+                h2.card-title.text-midnight-blue
+                  | Step 2.2 is the room ventilation. Choose the nearest or similar setting for your activity.
+            .card.card-bordered.shadow.font-sans.bg-white.h-0
+              figure.px-10.pt-10
+                img.rounded-xl(src="/static/images/screenshots/room size (screenshot 7).png")
+              .card-body
+                h2.card-title.text-midnight-blue
+                  | Step 2.3 is the room size. Enter the appropriate values in the input field.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/time and people (screenshot 8).png")
+    .card-body
+      h2.card-title
+        | Step 3 is the time and people. Enter the appropriate values in the input fields.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/masks (screenshot 9).png")
+    .card-body
+      h2.card-title
+        | Step 4 is the masks. Drag the slider to adjust the amount of people wearing masks and choose the type of mask they wear.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/summary (screenshot 10).png")
+    .card-body
+      h2.card-title
+        | A summary is shown before the results. You may take this time to review and edit your results.
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/results (screenshot 11).png")
+    .card-body
+      h2.card-title
+        | Step 5 is the result. You are finally done!
+  .card.card-bordered.shadow
+    figure.px-10.pt-10
+      img.rounded-xl(src="/static/images/screenshots/new risk level (screenshot 12).png")
+    .card-body
+      h2.card-title
+        | You can go back and test new answers.
+  .card.shadow.text-midnight-blue.bg-white
+    .card-body
+      h2.card-title.flex
+        svg.w-6.h-6.mx-2(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='#2196f3')
+          path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z')
+        | You will answer a short survey form for the improvement and betterment of the website.
